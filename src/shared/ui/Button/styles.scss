@@ -1,0 +1,78 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.button {
+    @include reset;
+    width: fit-content;
+    padding: 16px 26px;
+    @include flex-center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: $radius-3;
+    border: 1px solid transparent;
+    background: none;
+    color: $brand-color;
+    transition: all 0.2s linear;
+    cursor: pointer;
+
+    @include desktop-media {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &--primary {
+        background: $brand-color;
+        color: $white-color;
+
+        &:hover:enabled {
+            background: darken($brand-color, 1%);
+        }
+
+        &:active:enabled {
+            background: darken($brand-color, 5%);
+        }
+    }
+
+    &--outline {
+        border-color: $brand-color;
+
+        &:hover:enabled {
+            border-color: darken($brand-color, 1%);
+        }
+
+        &:active:enabled {
+            border-color: darken($brand-color, 5%);
+        }
+    }
+
+    &--wide {
+        width: 100%;
+    }
+
+    &--small {
+        padding: 8px 18px;
+        border-radius: $radius-4;
+        font-weight: 500;
+    }
+
+    &--icon {
+        padding: 16px;
+    }
+
+    &__icon {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+        @include flex-center;
+    }
+
+    &__text {
+        white-space: nowrap;
+    }
+
+    &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
+}

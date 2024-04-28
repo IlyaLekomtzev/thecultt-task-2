@@ -1,0 +1,19 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.favorite-button {
+    @include reset;
+    width: fit-content;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    color: $text-second-color;
+
+    &--active {
+        color: $brand-color;
+    }
+
+    &__count {
+        font-size: 12px;
+    }
+}

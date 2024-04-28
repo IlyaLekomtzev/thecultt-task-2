@@ -1,0 +1,20 @@
+@import "src/shared/styles/variables";
+
+.carousel-navigation {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &__item {
+        width: 5px;
+        height: 5px;
+        background-color: $bg-second-color;
+        border-radius: $radius-full;
+
+        &--active {
+            width: 8px;
+            height: 8px;
+            background-color: $brand-color;
+        }
+    }
+}

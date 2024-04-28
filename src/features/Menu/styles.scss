@@ -1,0 +1,19 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.menu {
+    width: 100%;
+    display: flex;
+    gap: 28px;
+
+    &__item {
+        @include reset;
+        font-size: 16px;
+        color: $text-color;
+        transition: color 0.2s linear;
+
+        &:hover {
+            color: $brand-color;
+        }
+    }
+}

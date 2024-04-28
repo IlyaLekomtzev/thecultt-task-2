@@ -1,0 +1,59 @@
+@import "./normalize";
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", Arial, Helvetica sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#root {
+    width: 100%;
+    min-height: 100dvh;
+    @include flex-column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1308px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.icon {
+    color: $text-color;
+}
+
+.content {
+    flex: 1;
+    padding-bottom: 22px;
+    position: relative;
+
+    @include desktop-media {
+        padding-bottom: 50px;
+    }
+
+    &__wrapper {
+        width: 100%;
+        @include flex-column;
+        gap: 24px;
+
+        @include desktop-media {
+            gap: 32px;
+        }
+    }
+}

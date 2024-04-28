@@ -1,0 +1,14 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.footer-menu-items {
+    width: 100%;
+    @include flex-column;
+    gap: 16px;
+
+    &__link {
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-color;
+    }
+}

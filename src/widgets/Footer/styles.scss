@@ -1,0 +1,130 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.footer {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: $bg-second-color;
+
+    @include desktop-media {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    &__desktop {
+        display: none;
+
+        @include desktop-media {
+            width: 100%;
+            @include flex-column;
+            flex-wrap: nowrap;
+            gap: 16px;
+        }
+    }
+
+    &__mobile {
+        @include flex-column;
+        align-items: center;
+        gap: 16px;
+
+        @include desktop-media {
+            display: none;
+        }
+    }
+
+    &__grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 336px;
+        gap: 60px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $bg-color;
+    }
+
+    &__bottom {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__copyright {
+        font-size: 10px;
+        color: $text-color;
+        text-align: center;
+
+        @include desktop-media {
+            font-size: 14px;
+            color: $text-second-color;
+            text-align: left;
+        }
+    }
+}
+
+.footer-logo {
+    display: none;
+
+    &__img {
+        width: 100%;
+    }
+
+    @include desktop-media {
+        display: block;
+        width: 184px;
+    }
+}
+
+.footer-menu-block {
+    width: 100%;
+    @include flex-column;
+    flex-wrap: nowrap;
+    gap: 14px;
+
+    &__title {
+        font-size: 17px;
+        font-weight: 600;
+        color: $text-color;
+    }
+}
+
+.footer-telegram {
+    width: 100%;
+
+    &__title {
+        font-size: 17px;
+        font-weight: 600;
+        color: $text-color;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: $text-color;
+        margin-top: 12px;
+    }
+
+    &__button {
+        margin-top: 20px;
+
+        .button__text {
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-mobile-telegram {
+    @include flex-center;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__item {
+        font-size: 14px;
+        color: $text-second-color;
+    }
+}

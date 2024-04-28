@@ -1,0 +1,58 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    z-index: 10;
+
+    @include desktop-media {
+        position: static;
+    }
+}
+
+.breadcrumbs-back {
+    @include reset;
+    width: 26px;
+    height: 26px;
+    @include flex-center;
+
+    @include desktop-media {
+        background-color: $bg-second-color;
+        border-radius: $radius-full;
+    }
+}
+
+.breadcrumbs-links {
+    display: none;
+
+    @include desktop-media {
+        display: flex;
+        align-items: center;
+        gap: 38px;
+        margin-left: 32px;
+    }
+
+    &__item {
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-second-color;
+        position: relative;
+
+        &:not(:last-of-type) {
+            &::before {
+                content: "/";
+                position: absolute;
+                left: calc(100% + 16px);
+            }
+        }
+
+        &:last-of-type {
+            color: $text-color;
+            text-decoration: underline;
+        }
+    }
+}

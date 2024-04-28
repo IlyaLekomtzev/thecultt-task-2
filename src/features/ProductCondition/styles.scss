@@ -1,0 +1,51 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.product-condition {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $bg-third-color;
+    }
+}
+
+.product-condition-item {
+    width: fit-content;
+    @include flex-column;
+    align-items: center;
+
+    &__title {
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-second-color;
+    }
+
+    &__circle {
+        width: 18px;
+        height: 18px;
+        border-radius: $radius-full;
+        border: 1px solid $brand-color;
+        background-color: $bg-color;
+        margin-bottom: 3px;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    &--active &__title {
+        color: $text-color;
+    }
+
+    &--active &__circle {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,14 @@
+@import "src/shared/styles/mixins";
+
+.product {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 6px;
+
+    @include desktop-media {
+        margin-top: 22px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 64px;
+    }
+}

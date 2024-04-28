@@ -1,0 +1,71 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.product-banner {
+    width: 100%;
+    @include flex-column;
+    align-items: center;
+    background-color: $bg-second-color;
+    border-radius: $radius-1;
+    overflow: hidden;
+
+    @include desktop-media {
+        flex-direction: row-reverse;
+    }
+
+    &__content {
+        width: 100%;
+        @include flex-column;
+        padding: 22px 32px;
+
+        @include desktop-media {
+            width: 50%;
+            padding: 66px 75px;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        font-size: 22px;
+        font-weight: 600;
+        color: $text-color;
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        width: 100%;
+        font-size: 14px;
+        color: $text-color;
+        margin-bottom: 24px;
+    }
+
+    &__button {
+        max-width: 100%;
+
+        @include desktop-media {
+            max-width: 265px;
+        }
+    }
+
+    &__cover {
+        width: 100%;
+        height: 100%;
+        @include flex-center;
+        position: relative;
+
+        @include desktop-media {
+            width: 50%;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 400px;
+        height: 100%;
+        object-fit: contain;
+
+        @include desktop-media {
+            max-width: 100%;
+        }
+    }
+}

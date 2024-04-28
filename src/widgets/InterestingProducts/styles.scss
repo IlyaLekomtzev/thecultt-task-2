@@ -1,0 +1,72 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.interesting-products {
+    width: 100%;
+    @include flex-column;
+
+    &__title {
+        width: 100%;
+        margin-bottom: 12px;
+        font-size: 17px;
+        font-weight: 700;
+        color: $text-color;
+
+        @include desktop-media {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+    &__list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        position: relative;
+
+        @include desktop-media {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+        }
+    }
+
+    &__item {
+        display: none;
+
+        &:first-of-type,
+        &:last-of-type {
+            display: flex;
+        }
+
+        @include desktop-media {
+            display: flex;
+        }
+    }
+
+    &__nav-button {
+        @include reset;
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        @include flex-center;
+        background-color: $bg-second-color;
+        border-radius: $radius-full;
+        margin-top: -20px;
+        z-index: 10;
+        display: none;
+
+        @include desktop-media {
+            display: flex;
+        }
+
+        &--prev {
+            left: 2px;
+        }
+
+        &--next {
+            right: 2px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.property {
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-second-color;
+
+    @include desktop-media {
+        font-size: 16px;
+    }
+
+    &__value {
+        color: $text-color;
+    }
+}

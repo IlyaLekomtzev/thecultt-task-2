@@ -1,0 +1,23 @@
+@import "src/shared/styles/variables";
+@import "src/shared/styles/mixins";
+
+.search-bar {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: $radius-3;
+    background-color: $white-color;
+
+    &__icon {
+        flex-shrink: 0;
+    }
+
+    &__input {
+        @include reset;
+        flex: 1;
+        padding-left: 10px;
+        font-size: 16px;
+        color: $text-color;
+    }
+}
